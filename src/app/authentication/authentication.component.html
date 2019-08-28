@@ -1,0 +1,51 @@
+<div class="page">
+	<div class="auth-body">
+		<div class="row">
+			<div class="col-6 blank">
+			</div>
+			<div class="col-6 form ">
+				<div *ngIf = "click; else noClick" >
+				<form (ngSubmit)="onSubmitSignup(f)" (input)="onChange(f)" #f="ngForm"  >
+						<div class="form-carry" >
+						<p class="form-input">Email</p>
+						<input type="email" name="email"  placeholder="example@gmail.com" required="email" ngModel >
+					</div>
+						<div class="" >
+							<p class="form-input">Password</p>
+							<input type="password" name="password"  placeholder="password" required ngModel >
+						</div>
+						<p style="color: red; font-weight: bolder; font-size: 14px"  >{{validate}}</p>
+						<div class="btn">
+							<button type="submit"  [ngStyle]="{'opacity': check !== true ? '0.3' : 'initial'  }">Signup</button>
+						</div>		
+
+						<div class="extra-msg" style="margin-top: 40px; text-align: center;">
+							<p>Already have an account? <span class="login" (click)="onLogin()" >Login</span></p>
+						</div>
+				</form>
+				</div>
+				<ng-template #noClick>
+					<form (ngSubmit)="onSubmitLogin(f)" (input)="onChange(f)" #f="ngForm"  >
+						<div class="form-carry" >
+						<p class="form-input">Email</p>
+						<input type="email" name="email"  placeholder="example@gmail.com" required="email" ngModel >
+					</div>
+						<div class="" >
+							<p class="form-input">Password</p>
+							<input type="password" name="password"  placeholder="password" required ngModel >
+						</div>
+						<p style="color: red; font-weight: bolder; font-size: 14px"  >{{validate}}</p>
+						<div class="btn">
+							<button type="submit"  [ngStyle]="{'opacity': check !== true ? '0.3' : 'initial'  }">Login</button>
+						</div>		
+
+						<div class="extra-msg" style="margin-top: 40px; text-align: center;">
+							<p>Don't have an account? <span class="login" (click)="onLogin()" >Signup</span></p>
+						</div>
+					</form>
+						</ng-template>
+			</div>
+		</div>
+	</div>	
+</div>
+

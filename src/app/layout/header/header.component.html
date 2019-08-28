@@ -1,0 +1,47 @@
+<div id="head">
+  <ul id="left-nav" >
+    <li><a routerLink="/" (click)="headerName('Home')">Home</a></li>
+    <li><a style="cursor: pointer;" (click)="headerName('Submit a Photo')">Submit a Photo</a></li>
+    <li><a routerLink="/auth"(click)="headerName('Join free')">Join free</a></li>
+  </ul>
+  <div id="title">
+    <p style="text-transform: uppercase;" >{{headName}}</p>
+  </div>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal" [ngStyle]="{'display': image === true ? 'block' : 'none'  }" >
+  <div style="margin: 10% 17%;" >
+     <span class="close" (click)="close()" >&times;</span>
+  <form action="" class="modal-content"  >
+    <div>
+      <p class="post-text">Title</p>
+    <input type="text" name=""placeholder="Title" >
+  </div>
+  
+    <div>
+      <p class="post-text">Image (Url)</p>
+    <input type="text" name="" placeholder="Image" >
+  </div>
+    <div>
+      <p class="post-text">Category</p>
+    <select name="" id="">
+      <option value="">Animal</option>
+      <option value="">Event</option>
+      <option value="">Tech</option>
+      <option value="">Nature</option>
+      <option value="">Sport</option>
+      <option value="">Food</option>
+      <option value="">Spirituality</option>
+      <option value="">Leisure</option>
+    </select>
+  </div>
+
+    <div class="btn">
+      <button class="" type="Submit" >Submit</button>
+    </div>
+  
+  </form>
+  </div>
+</div>
+
+</div>

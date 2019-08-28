@@ -1,0 +1,15 @@
+<div class="item image-item " (click)="modal()" >
+					<img src="{{displayImg.image}}" alt="{{displayImg.title}} image"  class="row-image image ">
+					<div class="overlaid" >
+						<i class="fas fa-heart heart">|</i>
+						</div>
+						<div class="overlaid-second">
+						<i class="fas fa-heart heart sec" download href="" >|</i>
+					</div>
+			</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" [ngStyle]="{'display': image === true ? 'block' : 'none'  }" (click)="close()">
+  <span class="close" (click)="close()" >&times;</span>
+  <img src="{{displayImg.image}}" (click)="close()" alt="{{displayImg.title}}" class="modal-content" id="img01">
+</div>
